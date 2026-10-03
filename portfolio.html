@@ -1,0 +1,1479 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio for IT, Business Analysis, Data Analytics, Project Management and Digital Transformation.">
+    <meta name="keywords" content="IT Support, Business Analyst, Data Analyst, SQL, Power BI, Project Management, ERP, Cybersecurity, Dashboard, Data Visualisation, Monitoring and Evaluation">
+    <meta name="author" content="CR Kaswa Professional Portfolio">
+
+    <title>CR Kaswa Professional Portfolio | IT • Data • Business Analysis</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #06b6d4;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --text: #334155;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --success: #16a34a;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(135deg, rgba(15,23,42,.97), rgba(30,64,175,.9)),
+                radial-gradient(circle at top right, #38bdf8, transparent 35%);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 120px 25px 70px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 700px;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: .3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #082f49;
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #94a3b8;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        /* HERO CARD */
+        .hero-card {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,.25);
+        }
+
+        .profile-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,#38bdf8,#2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #bbf7d0;
+            font-size: .9rem;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            background: #22c55e;
+            border-radius: 50%;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            color: var(--secondary);
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.7rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 18px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 25px rgba(15,23,42,.06);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .stat-card p {
+            color: var(--muted);
+        }
+
+        /* SERVICES */
+        .services {
+            background: #eef4ff;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(15,23,42,.1);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: #dbeafe;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        /* PROJECTS */
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: .3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.1);
+        }
+
+        .project-header {
+            height: 150px;
+            background: linear-gradient(135deg,#1e3a8a,#0891b2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: .75rem;
+        }
+
+        /* DASHBOARD */
+        .dashboard-section {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .dashboard-section .section-title h2 {
+            color: white;
+        }
+
+        .dashboard-section .section-title p {
+            color: #94a3b8;
+        }
+
+        .dashboard {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #334155;
+        }
+
+        .dashboard-top {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .metric {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .metric small {
+            color: #94a3b8;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1.8rem;
+            margin-top: 5px;
+            color: #38bdf8;
+        }
+
+        .chart-area {
+            height: 260px;
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            padding: 20px;
+            background: #0f172a;
+            border-radius: 12px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top,#2563eb,#38bdf8);
+            border-radius: 5px 5px 0 0;
+            min-height: 30px;
+            position: relative;
+        }
+
+        .bar span {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #94a3b8;
+            font-size: .7rem;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .skill {
+            margin-bottom: 22px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .skill-bar {
+            height: 9px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg,#2563eb,#06b6d4);
+            border-radius: 10px;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #bfdbfe;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 65px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid #dbeafe;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-content h3 {
+            color: var(--secondary);
+        }
+
+        .timeline-content span {
+            color: var(--primary);
+            font-size: .9rem;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: #eef4ff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--secondary);
+            color: white;
+            padding: 35px;
+            border-radius: 18px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            color: #cbd5e1;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .hero-container,
+            .about-grid,
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .dashboard-top {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width: 700px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-top {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">CR Kaswa<span>Professional Portfolio</span></div>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Expertise</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#dashboard">Analytics</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-container">
+
+        <div>
+            <p style="color:#38bdf8;font-weight:bold;">IT • DATA • BUSINESS • TECHNOLOGY</p>
+
+            <h1>
+                Technology Meets
+                <span>Business Intelligence.</span>
+            </h1>
+
+            <h2>
+                IT Support • Business Analysis • Data Analytics • Project Management
+            </h2>
+
+            <p>
+                I help organisations turn technology and data into practical solutions
+                through business analysis, IT systems management, reporting,
+                dashboards, project delivery, cybersecurity and digital transformation.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="profile-icon">💻</div>
+
+            <h3>IT & Business Technology Professional</h3>
+
+            <p>
+                Experienced in supporting technology operations, analysing business
+                data, managing projects, developing dashboards and delivering
+                technology-enabled business improvements.
+            </p>
+
+            <div class="availability">
+                <span class="dot"></span>
+                Available for professional opportunities
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>
+                A multidisciplinary professional combining technology,
+                data and business operations.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <h3>Turning Data & Technology Into Business Solutions</h3>
+
+                <p>
+                    I bring together experience in IT support, systems administration,
+                    business analysis, data analytics, project management, monitoring
+                    and evaluation, reporting and digital transformation.
+                </p>
+
+                <p>
+                    My work involves understanding business requirements, analysing
+                    data using SQL and reporting tools, developing dashboards and KPIs,
+                    supporting ERP and mobile applications, and delivering insights
+                    that help management make informed decisions.
+                </p>
+
+                <p>
+                    I also have experience in cybersecurity, business continuity,
+                    vendor management, IT support, fleet administration, student
+                    recruitment and mentoring.
+                </p>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <h3>IT</h3>
+                    <p>Systems & Technical Support</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>SQL</h3>
+                    <p>Data Extraction & Analysis</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>BI</h3>
+                    <p>Dashboards & Visualisation</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>M&E</h3>
+                    <p>Project Monitoring & Evaluation</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- EXPERTISE -->
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Professional Expertise</h2>
+            <p>
+                A combination of technology, analytics, management and operational expertise.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>IT Support</h3>
+                <p>
+                    1st and 2nd line support, troubleshooting, hardware,
+                    software, networking, helpdesk and SLA management.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Data Analytics</h3>
+                <p>
+                    SQL, data extraction, transformation, validation,
+                    analysis, KPIs and business intelligence.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h3>Dashboards</h3>
+                <p>
+                    Development of management dashboards, data visualisations,
+                    performance metrics and executive reports.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>Project Management</h3>
+                <p>
+                    Requirements gathering, project planning, delivery,
+                    stakeholder management, monitoring and evaluation.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔐</div>
+                <h3>Cybersecurity</h3>
+                <p>
+                    Security controls, data protection, CCTV, alarms,
+                    risk management and technology security practices.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">☁️</div>
+                <h3>Digital Transformation</h3>
+                <p>
+                    Technology strategy, ERP systems, mobile applications,
+                    integrations, automation and emerging technologies.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <p>
+                Examples of technology and analytical solutions that demonstrate
+                practical business value.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="project-card">
+                <div class="project-header">📊</div>
+
+                <div class="project-content">
+                    <h3>Management Dashboard</h3>
+
+                    <p>
+                        Designed a KPI dashboard providing management with
+                        visibility into operational performance, trends,
+                        budgets and key performance indicators.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">KPIs</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-header">🗄️</div>
+
+                <div class="project-content">
+                    <h3>Business Data Analysis</h3>
+
+                    <p>
+                        Analysed relational database information to identify
+                        operational trends, data quality issues, risks and
+                        opportunities for business improvement.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Validation</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-header">🏢</div>
+
+                <div class="project-content">
+                    <h3>ERP & Mobile Application</h3>
+
+                    <p>
+                        Supported ERP and mobile application operations,
+                        integrations, system upgrades, security, reporting
+                        and technical issue resolution.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">ERP</span>
+                        <span class="tag">Integration</span>
+                        <span class="tag">Mobile Apps</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-header">🚗</div>
+
+                <div class="project-content">
+                    <h3>Fleet Administration</h3>
+
+                    <p>
+                        Managed fleet records, maintenance schedules, fuel
+                        monitoring, vehicle utilisation, reporting and
+                        operational performance.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Fleet Management</span>
+                        <span class="tag">Reporting</span>
+                        <span class="tag">Operations</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-header">🎯</div>
+
+                <div class="project-content">
+                    <h3>Project M&E</h3>
+
+                    <p>
+                        Monitored project milestones, deliverables, KPIs,
+                        risks and outcomes while preparing reports for
+                        stakeholders and management.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">M&E</span>
+                        <span class="tag">Project Management</span>
+                        <span class="tag">KPIs</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-header">🔐</div>
+
+                <div class="project-content">
+                    <h3>IT Security & Continuity</h3>
+
+                    <p>
+                        Supported cybersecurity, backup, disaster recovery,
+                        redundancy and IT risk management initiatives.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Cybersecurity</span>
+                        <span class="tag">Backup</span>
+                        <span class="tag">DR</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ANALYTICS DASHBOARD -->
+<section class="dashboard-section" id="dashboard">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Analytics & Dashboard Showcase</h2>
+            <p>
+                Example dashboard demonstrating how operational data can be
+                converted into management information.
+            </p>
+        </div>
+
+        <div class="dashboard">
+
+            <div class="dashboard-top">
+
+                <div class="metric">
+                    <small>Projects</small>
+                    <strong>24</strong>
+                </div>
+
+                <div class="metric">
+                    <small>Reports</small>
+                    <strong>86</strong>
+                </div>
+
+                <div class="metric">
+                    <small>Tickets Resolved</small>
+                    <strong>94%</strong>
+                </div>
+
+                <div class="metric">
+                    <small>System Uptime</small>
+                    <strong>99%</strong>
+                </div>
+
+            </div>
+
+            <div class="chart-area">
+
+                <div class="bar" style="height:45%;">
+                    <span>Jan</span>
+                </div>
+
+                <div class="bar" style="height:60%;">
+                    <span>Feb</span>
+                </div>
+
+                <div class="bar" style="height:52%;">
+                    <span>Mar</span>
+                </div>
+
+                <div class="bar" style="height:72%;">
+                    <span>Apr</span>
+                </div>
+
+                <div class="bar" style="height:66%;">
+                    <span>May</span>
+                </div>
+
+                <div class="bar" style="height:84%;">
+                    <span>Jun</span>
+                </div>
+
+                <div class="bar" style="height:93%;">
+                    <span>Jul</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Technical & Professional Skills</h2>
+            <p>
+                Core competencies relevant to IT, analytics, business analysis
+                and technology management.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>SQL & Data Analysis</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Dashboard & Data Visualisation</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>IT Support</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:92%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Business Analysis</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:88%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Project Management</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:88%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>ERP & Systems</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Reporting & M&E</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:92%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-header">
+                        <span>Cybersecurity & IT Risk</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width:80%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:#f1f5f9;">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Professional Experience</h2>
+            <p>
+                Experience across technology, operations, analytics and management.
+            </p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>IT • Business Analysis • Analytics</span>
+
+                    <h3>IT & Business Technology Professional</h3>
+
+                    <p>
+                        Led technology operations, business analysis, reporting,
+                        analytics, project activities, IT support, systems
+                        administration and digital transformation initiatives.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>Fleet Operations</span>
+
+                    <h3>Fleet Administrator</h3>
+
+                    <p>
+                        Managed fleet records, maintenance schedules, fuel
+                        monitoring, vehicle utilisation, operational reporting
+                        and coordination with service providers.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>Technical Support</span>
+
+                    <h3>IT Support Technician</h3>
+
+                    <p>
+                        Provided first and second-line technical support,
+                        troubleshooting, user assistance, system maintenance,
+                        incident documentation and helpdesk services.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>Education & Development</span>
+
+                    <h3>Student Recruitment & Mentoring</h3>
+
+                    <p>
+                        Supported student recruitment, mentoring, reporting,
+                        project activities and student technology-related
+                        requirements.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- REPORTING -->
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Reporting & Management Insights</h2>
+            <p>
+                Converting operational information into clear management intelligence.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">📑</div>
+                <h3>Executive Reporting</h3>
+                <p>
+                    Clear reports and presentations designed to help leadership
+                    understand performance, risks, trends and opportunities.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>KPI Monitoring</h3>
+                <p>
+                    Tracking performance indicators and identifying deviations
+                    requiring management attention.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔎</div>
+                <h3>Data Quality</h3>
+                <p>
+                    Data validation, reconciliation and quality assurance to
+                    improve accuracy and reliability of reporting.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Let's Connect</h2>
+            <p>
+                Interested in technology, analytics, business analysis or
+                digital transformation? Let's discuss an opportunity.
+            </p>
+        </div>
+
+     
+ <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h3>Contact Information</h3>
+
+                <div class="contact-item">
+                    📧 <strong>Email</strong><br>
+                    crkaswa@gmail.com
+                </div>
+
+                
+
+                <div class="contact-item">
+                    📍 <strong>Location</strong><br>
+                    Harare, Zimbabwe
+                </div>
+
+                <div class="contact-item">
+                    💼 <strong>LinkedIn</strong><br>
+                    https://www.linkedin.com/in/christine-kaswa/
+                </div>
+
+             </div>
+
+
+            <form class="contact-form" onsubmit="sendMessage(event)">
+
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Subject</label>
+                    <input type="text" id="subject" placeholder="What would you like to discuss?" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="message" placeholder="Write your message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © <span id="year"></span> CR Kaswa Professional Portfolio.
+        IT • Data Analysis • Business Analysis • Project Management
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* MOBILE MENU */
+    function toggleMenu() {
+
+        const menu = document.getElementById("navLinks");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    /* CLOSE MOBILE MENU AFTER CLICK */
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document.getElementById("navLinks")
+                .classList.remove("active");
+
+        });
+
+    });
+
+
+    /* CONTACT FORM */
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+
+        alert(
+            "Thank you, " + name +
+            "! Your message has been captured. " +
+            "Connect this form to your email or backend service to receive submissions."
+        );
+
+    }
+
+
+    /* CURRENT YEAR */
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
+```
